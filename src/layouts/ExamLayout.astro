@@ -1,0 +1,9 @@
+---
+import InfoBox from "/src/components/InfoBox.astro";
+import Layout from "/src/layouts/Layout.astro";
+const {title,frontmatter}=Astro.props;
+---
+<Layout pageTitle={title}>
+	<InfoBox frontmatter={frontmatter} />
+	<slot />
+</Layout>

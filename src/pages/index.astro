@@ -1,9 +1,11 @@
 ---
+import {getCollection} from "astro:content";
 import Layout from "/src/layouts/Layout.astro";
+const allExams=await getCollection("exams");
 ---
 <Layout pageTitle="首页">
-	<p>欢迎来到维基真题!</p>
-	<p>本站收录北京邮电大学近年的期中、期末考试题。</p>
+	<p><strong>欢迎来到维基真题!</strong></p>
+	<p>本站收录北京邮电大学近年的期中、期末考试题。现有 <strong>{allExams.length}</strong> 篇真题。</p>
 	<p>你可以为本站添加试卷、补充题目或撰写解答。任何一笔小编辑都可能帮到无数读者！</p>
 	<h2>用户指引</h2>
 	<h3>搜索试题</h3>

@@ -11,6 +11,25 @@
 	border:solid 1px;
 	border-radius:4px;
 }
+.exam-blank{
+	background:#e9e9ed;
+}
+.exam-blank:hover:not(:disabled){
+	background:#d0d0d7;
+}
+.exam-blank:disabled{
+	color:#6d6d6d;
+}
+html.dark .exam-blank{
+	background:#343434;
+	color:#ffffff;
+}
+html.dark .exam-blank:hover:not(:disabled){
+	background:#474747;
+}
+html.dark .exam-blank:disabled{
+	color:#8f8f8f;
+}
 .exam-solution-summary{
 	cursor:pointer;
 	padding:0 4px;

@@ -4,6 +4,7 @@ import remarkBlank from "./src/plugins/remark-blank.mts";
 import remarkDirective from "remark-directive";
 import remarkFigure from "./src/plugins/remark-figure.mts";
 import remarkMath from "remark-math";
+import remarkSlot from "./src/plugins/remark-slot.mts";
 import remarkSolution from "./src/plugins/remark-solution.mts";
 import rehypeBlank from "./src/plugins/rehype-blank.mts";
 import rehypeFigure from "./src/plugins/rehype-figure.mts";
@@ -19,6 +20,7 @@ export default defineConfig({
 			remarkDirective,
 			remarkFigure,
 			remarkMath,
+			remarkSlot,
 			remarkSolution,
 		],
 		rehypePlugins:[

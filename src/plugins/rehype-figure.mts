@@ -13,7 +13,7 @@ const transformer=(node,index,parent)=>{
 					type:"element",
 					tagName:"image",
 					properties:{
-						src:img,
+						src:`/${img}`,
 						alt:img,
 						loading:"lazy",
 						className:["exam-figure-image"],

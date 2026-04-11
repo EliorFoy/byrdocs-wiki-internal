@@ -85,20 +85,80 @@ html.dark .exam-blank.is-disabled:hover{
 	white-space:pre;
 }
 .exam-solution{
-	border:solid 1px;
-	border-radius:4px;
+	background:color-mix(in srgb,var(--background) 97%,var(--black) 3%);
+	border:1px solid color-mix(in srgb,var(--background) 84%,var(--black) 16%);
+	border-radius:12px;
 	display:flow-root;
 	margin:1em 0;
+	overflow:hidden;
 }
 .exam-solution-summary{
+	align-items:center;
+	color:color-mix(in srgb,var(--black) 84%,var(--background) 16%);
 	cursor:pointer;
-	padding:0 4px;
+	display:flex;
+	font-size:0.96em;
+	font-weight:600;
+	gap:0.75em;
+	justify-content:space-between;
+	list-style:none;
+	padding:0.8em 1em;
+	transition:background-color 0.18s ease,color 0.18s ease;
+	user-select:none;
+}
+.exam-solution-summary::-webkit-details-marker{
+	display:none;
+}
+.exam-solution-summary::marker{
+	content:"";
+}
+.exam-solution-summary-main{
+	align-items:center;
+	display:inline-flex;
+	gap:0.65em;
+	min-width:0;
+}
+.exam-solution-summary-icon{
+	flex:none;
+	font-size:1.2em;
+	line-height:1;
+	transform:translateY(-0.02em);
+	transition:transform 0.18s ease;
+}
+.exam-solution-summary-hint{
+	color:color-mix(in srgb,var(--black) 55%,var(--background) 45%);
+	font-size:0.84em;
+	font-weight:500;
+}
+.exam-solution-summary-hint::before{
+	content:"展开";
+}
+.exam-solution-summary:hover{
+	background:color-mix(in srgb,var(--background) 92%,var(--black) 8%);
+}
+.exam-solution-summary:focus-visible{
+	outline:2px solid color-mix(in srgb,var(--black) 45%,transparent);
+	outline-offset:-2px;
 }
 .exam-solution[open] .exam-solution-summary{
-	border-bottom:solid 1px;
+	background:color-mix(in srgb,var(--background) 90%,var(--black) 10%);
+	border-bottom:1px solid color-mix(in srgb,var(--background) 84%,var(--black) 16%);
+}
+.exam-solution[open] .exam-solution-summary-icon{
+	transform:translateY(-0.02em) rotate(90deg);
+}
+.exam-solution[open] .exam-solution-summary-hint::before{
+	content:"收起";
 }
 .exam-solution-content{
-	padding:0 4px;
+	color:color-mix(in srgb,var(--black) 88%,var(--background) 12%);
+	padding:0.2em 1em 1em;
+}
+.exam-solution-content>:first-child{
+	margin-top:0;
+}
+.exam-solution-content>:last-child{
+	margin-bottom:0;
 }
 .exam-choices{
 	border:none;

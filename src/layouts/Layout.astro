@@ -20,6 +20,41 @@ const pageDescription="BYR Docs 维基真题收录北京邮电大学近年试题
 		<meta name="description" content={pageDescription} />
 		<meta name="keywords" content="北邮,北京邮电大学,考试题目,维基" />
 		<meta name="author" content={organization} />
+		<script is:inline>
+			const themeMedia=window.matchMedia("(prefers-color-scheme: dark)");
+			const themeStorageKey="theme";
+			const getStoredThemePreference=()=>{
+				const storedTheme=window.localStorage.getItem(themeStorageKey)??"system";
+				return ["system","dark","light"].includes(storedTheme)?storedTheme:"system";
+			};
+			const getResolvedTheme=(themePreference)=>themePreference==="system"?(themeMedia.matches?"dark":"light"):themePreference;
+			const applyThemePreference=(themePreference)=>{
+				const resolvedTheme=getResolvedTheme(themePreference);
+				const isDark=resolvedTheme==="dark";
+				document.documentElement.classList.toggle("dark",isDark);
+				document.documentElement.style.colorScheme=resolvedTheme;
+				document.documentElement.dataset.themePreference=themePreference;
+				window.localStorage.setItem(themeStorageKey,themePreference);
+				window.dispatchEvent(new CustomEvent("themechange",{
+					detail:{
+						preference:themePreference,
+						resolvedTheme,
+					},
+				}));
+			};
+			window.__theme={
+				applyThemePreference,
+				getStoredThemePreference,
+				getResolvedTheme,
+				themeMedia,
+			};
+			applyThemePreference(getStoredThemePreference());
+			themeMedia.addEventListener("change",()=>{
+				const themePreference=getStoredThemePreference();
+				if(themePreference==="system")
+					applyThemePreference(themePreference);
+			});
+		</script>
 		<title>{`${pageTitle} - BYR Docs 维基真题`}</title>
 	</head>
 	<body>

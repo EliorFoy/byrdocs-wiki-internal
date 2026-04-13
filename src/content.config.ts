@@ -23,7 +23,11 @@ const SCHOOLS=[
 ]as const;
 const timePattern=/^(\d{4})-(\d{4})学年第[一二]学期$/;
 const exams=defineCollection({
-	loader:glob({pattern:"*.mdx",base:"./exams"}),
+	loader:glob({
+		pattern:"*.mdx",
+		base:"./exams",
+		generateId:({entry})=>entry.replace(/\.mdx$/,""),
+	}),
 	schema:z.object({
 		时间:z.string()
 			.regex(timePattern)

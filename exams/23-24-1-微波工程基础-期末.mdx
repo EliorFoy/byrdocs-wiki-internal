@@ -1,0 +1,352 @@
+---
+时间: 2023-2024学年第一学期
+科目: 微波工程基础
+阶段: 期末
+类型: 本科
+学院:
+- 电子工程学院
+来源: 23f97a6695542ecf2ed9748ace622c84
+答案完成度: 完整可靠
+---
+
+## 一、填空题（每空 1 分，共 20 分）
+
+1. 传输线包括四个分布参数，分别为<Blank>分布电阻</Blank>，<Blank>分布电感</Blank>，<Blank>分布电导</Blank>，<Blank>分布电容</Blank>。
+
+2. 端接匹配负载的传输线各点的输入阻抗等于<Blank>负载阻抗 或 特征阻抗</Blank>。
+
+3. 终端短路、长度为四分之一波长的传输线，从始端看其输入阻抗为<Blank>无穷大</Blank>；终端开路、长度为二分之一波长的传输线，从始端看其输入阻抗为<Blank>无穷大</Blank>。
+
+4. 电压反射系数模的取值范围为<Blank>$ [0, 1] $</Blank>，驻波比的取值范围为<Blank>$ [1, \infty] $</Blank>。
+
+5. 单支节匹配器的缺点是<Blank>不同负载，枝节位置不固定</Blank>，双支节匹配器的缺点是<Blank>匹配盲区</Blank>。
+
+6. 散射参量的物理含义为端口接<Blank>匹配负载</Blank>，端口的<Blank>电压反射系数</Blank>及<Blank>电压传输系数</Blank>。
+
+7. 参考面移动后，散射参量的<Blank>幅度</Blank>保持不变，<Blank>相位</Blank>产生变化。
+
+8. 无耗网络的散射矩阵具有<Blank>幺正 或 么正</Blank>性。
+
+9. 对于两个二端口网络 N1 和 N2，串联时阻抗矩阵<Blank>相加</Blank>，并联时导纳矩阵<Blank>相加</Blank>，级联时转移矩阵<Blank>相乘</Blank>。
+
+## 二、简答题（共 20 分）
+
+### 1.
+
+无耗传输线的特点是什么？广义无耗传输线的特点是什么？（4 分）
+
+<Solution>
+    无耗传输线中衰减常数𝛼为0。广义无耗传输线是不仅要考虑负载对传输线上电流和电压的影响，还需要考虑信号源内阻抗对传输线上电流和电压的影响。
+</Solution>
+
+### 2.
+
+在阻抗原图中，正实半轴上入射波电压和反射波电压的相位关系是什么？此时，行波系数和输入阻抗的关系是什么？（4 分）
+
+<Solution>
+    入射波电压和反射波电压同相；$Z_{in} = \frac{Z_0}{K}$
+</Solution>
+
+### 3.
+
+写出两种多节阻抗变换器形式并给出各自的响应特点？（4 分）
+
+<Solution>
+    二项式（最大平坦特性）多节阻抗变换器：带内平坦，带宽窄。切比雪夫（等波纹特性）多节阻抗变换器：带内等纹波，带宽宽。
+</Solution>
+
+### 4.
+
+微波网络的电路参量包括什么？二端口网络条件下用各电路参量表示的线性方程分别是什么？（4 分）
+
+<Solution>
+    阻抗参量，导纳参量，转移参量；（1 分）
+
+    $$
+    \begin{cases}
+    V_1 = Z_{11} I_1 + Z_{12} I_2 \\
+    V_2 = Z_{21} I_1 + Z_{22} I_2
+    \end{cases}
+    \quad
+    \begin{cases}
+    I_1 = Y_{11} V_1 + Y_{12} V_2 \\
+    I_2 = Y_{21} V_1 + Y_{22} V_2
+    \end{cases}
+    \quad
+    \begin{cases}
+    V_1 = A V_2 + B I_2 \\
+    I_1 = C V_2 + D I_2
+    \end{cases}
+    $$
+
+    （3 分）
+
+    A矩阵电流参考方向不同，最后一个写成减号给分
+
+    $$
+    \begin{cases}
+    V_1 = A V_2 - B I_2 \\
+    I_1 = C V_2 - D I_2
+    \end{cases}
+    $$
+</Solution>
+
+### 5.
+
+互易无耗网络中电路参量的性质是什么？（4 分）
+
+<Solution>
+    互易：$ Z_{12} = Z_{21}; \quad Y_{12} = Y_{21}; \quad AD - BC = 1 $
+
+    无耗：Z 参量全部为虚数；Y 参量全部为虚数；A、D 为实数，B、C 为虚数。
+
+    写对一点即 1 分。
+</Solution>
+
+## 三、计算题（11 分）
+
+<Figure src="23-24-1-微波工程基础-期末-题图3.png" float>
+    第三题图
+</Figure>
+
+均匀无耗传输线电路如下图，已知传输线特征阻抗：$ Z_0 = 50\,\Omega $和$ 2Z_0 = 100\,\Omega $。求：
+
+1. 当并联支节负载阻抗$ Z_2 = 25\,\Omega $，若传输线 ab 段上为行波工作状态，求负载阻抗$ Z_1 $；
+2. bc、be和cd段传输线工作状态，并求出相应线上电压驻波比；
+3. be线上反射系数。
+
+<Solution>
+    （1）因为$ Z_d = 0 $，所以$ Z_c' = \infty $，
+
+    $Z_c = Z_c' // Z_c'' = Z_1 $；
+
+    $ Z_b'' = \frac{4 Z_0^2}{Z_1} $，
+
+    $ Z_b'' = \frac{Z_0^2}{Z_2} = 100\,\Omega \, $；
+
+    $ Z_b = \frac{Z_b'}{Z_b''} = \frac{100Z_0^2}{Z_0^2 + 25Z_1}$，
+
+    且$ Z_b = Z_0 $，因此$ Z_1 =100\,\Omega$。
+
+    （2）由于$ Z_c = Z_1 = 2Z_0 $，所以 bc 段为行波状态，驻波比$ \rho_{bc} = 1 $；
+
+    be段为行驻波，驻波比$ \rho_{be} = 2 $
+
+    cd 为驻波状态，
+    $ \rho_{cd} = \infty $。
+
+    （3）$ \Gamma_e = \frac{Z_2 - Z_0}{Z_2 + Z_0} = -\frac{1}{3} $，所以$ \Gamma_{be} = \Gamma_e e^{-j2\beta l} = - \frac{1}{3} e^{-j\frac{4\pi l}{\lambda}} $。
+</Solution>
+
+## 四、计算题（10 分）
+
+<Figure src="23-24-1-微波工程基础-期末-题图4.png" float>
+    第四题图
+</Figure>
+
+微波均匀无耗传输线电路如下图所示，信号源电压$ U_g = 200V$，内阻$ Z_g = 100\,\Omega $，传输线特征阻抗$ Z_0 = 100\,\Omega $，负载阻抗分别为$ Z_1 = 50\Omega $和$ Z_L = 50+j50\,\Omega $。试求：
+
+1. 为了实现信号源匹配，设计短路支节（df）长度$ l $和$ \frac{\lambda}{4} $ 阻抗变换器（cd）特征阻抗$ Z_{01}$；
+2. 求 be 段传输线电压驻波比和e点处电压幅值$ |U_e| $。
+
+<Solution>
+    （1）$ Z_b'' = \frac{Z_0^2}{Z_1} = 200\,\Omega $，
+
+    为了实现信号源匹配，$ Z_b = Z_0 = {Z_b'} // {Z_b''} $，所以$ Z_b' =  200\,\Omega $；
+
+    $ Z_c = Z_b' = 200\,\Omega $；
+
+    为了设计$ \frac{\lambda}{4} $阻抗变换器，通过并联支节使得$ Z_d$为实数，
+
+    $ Y_L = \frac{1}{Z_L} = \frac{1}{100} (1 - j) $，并联支节导纳值为$j0.01$，
+
+    并联支节长度为最小值为$ l = 0.125\,\lambda $。$Z_d=100\,\Omega $
+
+    因此$ Z_{01} = \sqrt{Z_c Z_d} = 141.4\,\Omega $；
+
+    （2）be 段传输线电压反射系数幅值$ \left| \Gamma \right| = \left| \frac{Z_1 - Z_0}{Z_1 + Z_0} \right| = \frac{1}{3} $，驻波比$ \rho = \frac{1 + |\Gamma|}{1 - |\Gamma|} = 2 $；
+
+    信号源匹配，b点输入电压幅值为100V，e处为电压波节点，因此$ U_e = 100 \times (1 - |\Gamma|) = \frac{200}{3}\, \text{V} $。
+</Solution>
+
+## 五、计算题（12 分）
+
+<Figure src="23-24-1-微波工程基础-期末-题图5.png" float>
+    第五题图
+</Figure>
+
+<Figure src="Smith圆图.png" float>
+    Smith圆图
+</Figure>
+
+某均匀无耗传输线特性阻抗$ Z_0 = 50\,\Omega $，端接负载阻抗$ Z_L = 30-j75\,\Omega $，设计并联双支节匹配（并联一开路支节线和一短路支节线，其中短路支节线距离负载更近$ d = 0.05\,\lambda $）使系统输入达到匹配，两支节间距为$ \frac{3\lambda}{8} $，使用Smith圆图求各支节长度。（要求$ l_1$取较小值，写清必要步骤）
+
+<Solution>
+    (a) 归一化负载阻抗$Z_L=0.6-j1.5$，确定其在史密斯圆图上的位置；
+
+    (b) 画出负载所在的等反射系数圆；
+
+    (c) 确定负载关于圆心的对称点，即归一化负载导纳的位置$y_L=0.22+j0.58$；
+
+    (d) 在等反射系数圆上沿顺时针旋转$0.05\,\lambda $到第一支节位置，得到$ y_1' = 0.4 + j1.1 $；
+
+    (e) 画出辅助圆；
+
+    (f) 第一支节位置沿等电导圆找到与辅助圆的两个交点，得到$y_1$的两个解($0.4-j0.2 $和$0.4-j1.8$)；
+
+    (g) 第一支节归一化导纳值为$-j1.3$或$-j2.9$，取 $l_1$较小值$ l_1=0.053\,\lambda$；
+
+    (h) 将该交点沿等反射系数圆顺时针旋转3/8，得到$y_2'=1.0+j3.2$；
+
+    (i) 沿等电导圆旋转到圆心，即实现匹配，$l_2=0.298\,\lambda$。
+</Solution>
+
+## 六、计算题（15 分）
+
+<Figure src="23-24-1-微波工程基础-期末-题图6.png" float>
+    第六题图
+</Figure>
+
+某二端口网络的等效电路如图所示,其中以两端口均为$50\,\Omega$归一化参数$r_1=1$，$r_2=2$，$y=j1$。试求：
+
+1. 该二端口网络的S参数。
+2. 该网络端口2接$150\,\Omega$负载时，1端口处的反射系数。
+
+<Solution>
+    （1）解法一：
+
+    采用S参数端口平移方法：
+
+    中间T型网络的A参数为：
+
+    $$
+    A_1 \cdot A_2 \cdot A_3 = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ j & 1 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 1 + j1 & 3 + j2 \\ j1 & 1 + j2 \end{bmatrix}
+    $$
+
+    转换为S参数为：
+
+    $$
+    S = \begin{bmatrix} 0.2459 - 0.2951i & 0.1639 - 0.1967i \\ 0.1639 - 0.1967i & 0.4426 - 0.1311i \end{bmatrix}
+    $$
+
+    或
+
+    $$
+    \begin{bmatrix} \frac{3}{5+j6} & \frac{2}{5+j6} \\ \frac{2}{5+j6} & \frac{3+j2}{5+j6} \end{bmatrix}
+    $$
+
+    或
+
+    $$
+    \frac{1}{\sqrt{61}} \begin{bmatrix} 3e^{-j50.19^\circ} & 2e^{-j50.19^\circ} \\ 2e^{-j50.19^\circ} & \sqrt{13}e^{-j16.5^\circ} \end{bmatrix}
+    $$
+
+    ①②端口可以看做T型网络向外分别平移$ \frac{\beta \lambda}{8} $，$ \frac{\beta \lambda}{16} $即$ 45^\circ $，$ 22.5^\circ $
+
+    因此，网络S参数为
+
+    $$
+    \frac{1}{\sqrt{61}} \begin{bmatrix} 3e^{-j140.19^\circ} & 2e^{-j117.69^\circ} \\ 2e^{-j117.69^\circ} & \sqrt{13}e^{-j61.5^\circ} \end{bmatrix}
+    $$
+
+    或
+
+    $$
+    \begin{bmatrix} -0.2951 - 0.2459i & -0.1190 - 0.2267i \\ -0.1190 - 0.2267i & 0.2203 - 0.4057i \end{bmatrix}
+    $$
+
+    解法二：采用A参数相乘
+
+    $$
+    A = A_1 A_2 A_3 A_4 A_5 = \begin{bmatrix} \cos \frac{\pi}{4} & j \sin \frac{\pi}{4} \\ j \sin \frac{\pi}{4} & \cos \frac{\pi}{4} \end{bmatrix} \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ j & 1 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} \cos \frac{\pi}{8} & j \sin \frac{\pi}{8} \\ j \sin \frac{\pi}{8} & \cos \frac{\pi}{8} \end{bmatrix} = \begin{bmatrix} -0.8118 + 0.9239i & 0.3827 + 1.9598i \\ -2.0063 + 1.0360i & -1.1945 + 2.9958i \end{bmatrix}
+    $$
+
+    将ABCD转为S得到
+
+    $$
+    \frac{1}{\sqrt{61}} \begin{bmatrix} 3e^{-j140.19^\circ} & 2e^{-j117.69^\circ} \\ 2e^{-j117.69^\circ} & \sqrt{13}e^{-j61.5^\circ} \end{bmatrix}
+    $$
+
+    或
+
+    $$
+    \begin{bmatrix} -0.2951 - 0.2459i & -0.1190 - 0.2267i \\ -0.1190 - 0.2267i & 0.2203 - 0.4057i \end{bmatrix}
+    $$
+
+    （2）$ \Gamma_L = \frac{150 - 50}{150 + 50} = \frac{1}{2} $
+
+    可画信号流图求1端口的反射系数与S参数与负载处反射系数关系
+
+    $$
+    \Gamma_{in} = S_{11} + \frac{S_{12}S_{21}\Gamma_{L}}{1 - S_{22}\Gamma_{L}}
+    $$
+
+    $$
+    \Gamma_{in} = -0.308 - j0.213
+    $$
+</Solution>
+
+## 七、计算题（12 分）
+
+归一化阻抗为$50\,\Omega$的3端口网络S参数矩阵如下。
+
+$$
+\begin{bmatrix} 0.6 \angle 90^\circ & 0.8 \angle 45^\circ & 0.8 \angle 45^\circ \\ 0.8 \angle 45^\circ & 0 & 0.6 \angle 45^\circ \\ 0 & 0.6 \angle 45^\circ & 0 \end{bmatrix}
+$$
+
+1. 判断该网络是否为无耗网络。
+2. 若端口2接$150\,\Omega$负载，端口3接$30\,\Omega$负载时，求端口1处反射系数。
+
+<Solution>
+    （1）两列之间点乘不为零，不是无耗网络。
+
+    （2）
+
+    解法一：解析法
+
+    由题可知:
+
+    $ \Gamma_2 = \frac{150 - 50}{150 + 50} = \frac{1}{2} $，$ \Gamma_3 = \frac{30 - 50}{30 + 50} = -\frac{1}{4} $
+
+    $ \Gamma_1 = \frac{b_1}{a_1}, \quad \Gamma_2 = \frac{a_2}{b_2}, \quad \Gamma_3 = \frac{a_3}{b_3} $
+
+    $ b_1 = S_{11}a_1 + S_{12}a_2 + S_{13}a_3 $ (1)
+
+    $ b_2 = S_{21} \cdot a_1 + S_{23} \cdot a_3 = S_{21} \cdot a_1 + S_{23} \cdot b_3 \cdot \Gamma_3 $ (2)
+
+    $ b_3 = S_{32} \cdot a_2 = S_{32} \cdot \Gamma_2 \cdot b_2 $ (3)
+
+    联立(2)(3)解得
+
+    $ b_2 = S_{21} \cdot a_1 + S_{23} \cdot \Gamma_3 \cdot S_{32} \cdot \Gamma_2 \cdot b_2 $
+
+    $ \Rightarrow b_2 = \frac{S_{21} \cdot a_1}{1 - \Gamma_2 \Gamma_3 S_{23} \cdot S_{32}} = \frac{a_2}{\Gamma_2} $
+
+    $ \Rightarrow \frac{a_2}{a_1} = \frac{S_{21} \cdot \Gamma_2}{1 - \Gamma_2 \Gamma_3 S_{23} \cdot S_{32}} $
+
+    $ b_3 = S_{32} \Gamma_2 \cdot b_2 = S_{32} \cdot \Gamma_2 \cdot \frac{S_{21} \cdot a_1}{1 - \Gamma_2 \Gamma_3 S_{23} S_{32}} = \frac{a_3}{\Gamma_3} $
+
+    $ \Rightarrow \frac{a_3}{a_1} = \frac{S_{32} \cdot S_{21} \cdot \Gamma_2 \cdot \Gamma_3}{1 - \Gamma_2 \Gamma_3 S_{23} \cdot S_{32}} $
+
+    $ \Gamma_1 = \frac{b_1}{a_1} = S_{11} + S_{12} \cdot \frac{a_2}{a_1} + S_{13} \cdot \frac{a_3}{a_1} $
+
+    $ = S_{11} + S_{12} \cdot \frac{S_{21} \cdot \Gamma_2}{1 - \Gamma_2 \Gamma_3 S_{23} \cdot S_{32}} + S_{13} \cdot \frac{S_{32} \cdot S_{21} \cdot \Gamma_2 \Gamma_3}{1 - \Gamma_2 \cdot \Gamma_3 S_{23} S_{32}} $
+
+    $ \Gamma_1 = 0.0467 + 0.8804j $
+
+    解法二：信号流图
+
+    由S参数矩阵关系可以画出如下流图
+
+    $ \Gamma_2 = \frac{150 - 50}{150 + 50} = \frac{1}{2} $，$ \Gamma_3 = \frac{30 - 50}{30 + 50} = -\frac{1}{4} $
+
+    <Figure src="23-24-1-微波工程基础-期末-解答7-1.svg" />
+
+    化简得到
+
+    <Figure src="23-24-1-微波工程基础-期末-解答7-2.svg" />
+
+    $ \Gamma_1 = S_{11} + S_{12} \cdot \frac{S_{21} \cdot \Gamma_2}{1 - \Gamma_2 \Gamma_3 S_{23} \cdot S_{32}} + S_{13} \cdot \frac{S_{32} \cdot S_{21} \cdot \Gamma_2 \Gamma_3}{1 - \Gamma_2 \cdot \Gamma_3 S_{23} S_{32}} $
+
+    $ \Gamma_1 = 0.0467 + 0.8804j $
+</Solution>

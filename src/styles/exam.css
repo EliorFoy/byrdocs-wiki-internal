@@ -496,6 +496,23 @@ html.dark .exam-figure-float{
 html.dark .exam-figure-caption{
 	color:#bbb;
 }
+.exam-audio{
+	margin:1em 0;
+}
+.exam-audio-player{
+	display:block;
+	max-width:100%;
+	width:min(100%,36rem);
+}
+.exam-audio-caption{
+	color:#444;
+	font-size:0.9em;
+	margin-top:0.5em;
+	text-align:start;
+}
+html.dark .exam-audio-caption{
+	color:#bbb;
+}
 @media (max-width:640px){
 	.exam-figure-float{
 		box-sizing:border-box;

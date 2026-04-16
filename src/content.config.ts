@@ -24,9 +24,9 @@ const SCHOOLS = [
 const timePattern = /^(\d{4})-(\d{4})学年第[一二]学期$/;
 const exams = defineCollection({
     loader: glob({
-        pattern: "*/index.mdx",
+        pattern: ["*/index.mdx", "*.mdx"],
         base: "./exams",
-        generateId: ({ entry }) => entry.replace(/\/index\.mdx$/, ""),
+        generateId: ({ entry }) => entry.replace(/(?:\/index)?\.mdx$/, ""),
     }),
     schema: z.object({
         时间: z.string()
